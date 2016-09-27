@@ -1,0 +1,42 @@
+1.设计核心使用MVC（体系结构类型）
+
+Controller对象
+construct()负责处理请求
+render()执行调度
+
+Module对象
+action()进行操作
+
+view对象
+start()设置缓冲视图
+end():String输出缓冲区数据
+show(type:string, params:array):String
+findviewtype()
+
+2.用户交互部分
+2.1 身份验证
+indexModule对象，判定显示对象或是重定向操作
+
+LoginModule对象，登陆样式显示，以及信息验证。
+
+数据库操作：User和dao
+在User中集成dao。根据save方法来判断是进行一次元素update或者是一次元素create。
+使用工厂模式进行mysql的连接
+使用一个模板作为数据库的接口，同时使用工厂设计模式构建对象。mysql对象使用单例模式创建
+
+将————construct方法设置为受保护的方法使得在外部进行实例化操作成为不可能。
+
+数据库方法：
+execute() getArray() insertGetID() clean()
+
+身份验证：使用工厂模式提供灵活性，方便更换内部方法。
+
+3.用户操作部分
+UsersModule进行用户的创建删除和编辑。
+daocollection，数据对象的集合，使用迭代器设计模式
+
+4.联系方式管理
+contactsModule对象
+
+5.考虑的其他设想
+5.1各种链接交互的便利性，用于地址可以显示到地图的链接上，社交网络或web站点可以直接访问其链接。邮件可以有着用于发送邮件的链接。移动电话可以直接进行拨号。
