@@ -3,7 +3,7 @@
 	<?php
 		echo view::show('standard/errors');
 	?>
-	<form action="/login/process" method="post">
+	<form action="/PhpDesignPattern/Demo/login/process" method="post">
 		<div class="row">
 			<label for="username">Username:</label>
 			<input type="text" name="username" id="username" 

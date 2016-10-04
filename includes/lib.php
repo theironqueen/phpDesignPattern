@@ -36,7 +36,7 @@ class lib
 	public static function sendto($url = '')
 	{
 		if (empty($url)) {
-			$url = '/PhpDesignPattern/Demo/';
+			$url = '/';
 		}
 
 		die(header('Location: ' . '/PhpDesignPattern/Demo' . $url));

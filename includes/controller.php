@@ -38,7 +38,7 @@ class controller
 
 	public function render()
 	{
-		//var_dump($this->parts);
+		// var_dump($this->parts);
 		if (!class_exists($this->parts[0])) {
 			throw new SectionDoesntExistException("{$this->parts[0]} is".
 				" not a valid module.");

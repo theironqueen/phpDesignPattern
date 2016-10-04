@@ -4,7 +4,9 @@
  */
 class autoloader
 {
+
 	const MY_FILE_PATH = '/PhpDesignPattern/Demo';
+	// const MY_FILE_PATH = 'D:/tools/wamp/www/PhpDesignPattern/Demo';
 	public static function moduleautoloader($class)
 	{
 		$path = $_SERVER['DOCUMENT_ROOT'] . autoloader::MY_FILE_PATH . "/modules/{$class}.php";
