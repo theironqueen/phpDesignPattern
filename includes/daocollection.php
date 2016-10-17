@@ -10,7 +10,7 @@ abstract class daocollection implements Iterator
 		foreach ($array as $item) {
 			$object = new $dataobject;
 			foreach ($item as $key => $value) {
-				$object->$key = $val;
+				$object->$key = $value;
 			}
 			$this->storage[] = $object;
 		}

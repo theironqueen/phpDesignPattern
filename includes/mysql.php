@@ -21,6 +21,7 @@ class mysql extends db implements singletoninterface
 		$db = 'contacts';
 
 		$this->link = mysqli_connect($host, $user, $pass, $db);
+		mysqli_query($this->link, 'set names utf8');
 	}
 
 	public function clean($string)

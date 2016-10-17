@@ -9,10 +9,10 @@ class index{
 			lib::sendto('/login');
 		}
 		else {
-			// $contacts = new contactscollection(lib::getItem('user'));
-			// $contacts->getwidthdata();
-
-			// echo view::show('contacts/browse', array('contacts'=>$contacts));
+			$contacts = new contactscollection(lib::getItem('user'));
+			$contacts->getwithdata();
+			//print_r($contacts);
+			echo view::show('contacts/browse', array('contacts'=>$contacts));
 		}
 	}
 }

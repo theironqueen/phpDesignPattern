@@ -169,11 +169,11 @@ a.featured:hover {
  }
 
  .methodboxvaluebox {
- 	display: none;
- }
+	display: none;
+} 
  #contactgroupingcontainer {
  	display: none;
- }
+ } 
  .hasvalue {
  	display: block;
  }

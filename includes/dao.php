@@ -59,9 +59,9 @@ class dao
 			$qualifier .= "{$column}='" . $connection->clean($value) . "' ";
 		}
 		$sql .= $qualifier;
-		print_r($sql);
+		// print_r($sql);
 		$valuearray = $connection->getArray($sql);
-		print_r($valuearray);
+		// print_r($valuearray);
 		if (!isset($valuearray[0])) {
 			$valuearray[0] = array();
 		}
