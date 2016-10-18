@@ -74,7 +74,7 @@ class users
 			$userid = (int) $controller->params[0];
 			$connection = db::factory('mysql');
 
-			$sql = "delete u.* from user u where u.id = {$userid}";
+			$sql = "delete u.*, c.*, g.*, m.* from user u left join contact c on c.ownerid = u.id left join contactgroup g on g.contactid=c.id left join contactmethod m on g.id=m.contactgroupid where u.id = {$userid}";
 			$connection->execute($sql);
 			lib::sendto('/users');
 		}

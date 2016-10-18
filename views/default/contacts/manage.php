@@ -1,7 +1,7 @@
 <h2> <?php echo $view['title']?></h2>
 <form action="<?php echo $view['action']?>" method="post" id="<?php echo $view['formid'] ?>">
 <?php 
-	echo ' <input type="hidden" name="id" value=">' . (array_key_exists('contact',$view)?$view['contact']->id:'');
+	echo ' <input type="hidden" name="id" value="' . (array_key_exists('contact',$view)?$view['contact']->id:'');
 	echo '" />';
 	$vals = array('firstname'=>'First Name','middlename'=>'Middle Name', 'lastname'=>'Last Name');
 
@@ -20,12 +20,15 @@
 			echo view::show('contacts/group', array('group'=>$group,'counter'=>$counter,'type'=>$view['type']));
 		}
 		$counter++;
-		$group = null;
+		$group = new stdClass;
+		$group->label = '';
+
 	}
 	else {
 		$counter = 0;
 		$group = new stdClass;
 		$group->label = 'default';
+		// echo view::show('contacts/group', array('group'=>$group, 'counter'=>$counter, 'type'=>'add'));
 	}
 	echo view::show('contacts/group', array('group'=>$group, 'counter'=>$counter, 'type'=>'add'));
 
